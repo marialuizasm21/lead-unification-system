@@ -1,201 +1,201 @@
-# Sistema de Unificação Automática de Leads e Requalificação
+# Sistema Unificado de Qualificação de Leads
 
-<img width="4170" height="2970" alt="sistema-integracao-leads" src="https://github.com/user-attachments/assets/e5d0e022-3cb5-4bf7-ac5b-4f8df7352e31" />
+Sistema centralizado de qualificação desenvolvido com **engenharia de prompts e automação assistida por IA**, implementando 6 workflows integrados para eliminar descentralização, duplicidade e criar segmentação automática de leads.
 
-Sistema automático que consolida leads desqualificados de múltiplas fontes, elimina duplicidades e calcula elegibilidade para requalificação baseado em regras de negócio.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maria-luiza-moraes-98a6b22a8/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/marialuizasm21)
+
+---
+
+## Skills
+
+<div align="center">
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Google Sheets](https://img.shields.io/badge/Google_Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white)
+![Google Drive](https://img.shields.io/badge/Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![Regex](https://img.shields.io/badge/Regex-000000?style=for-the-badge)
+![GitHub Repo](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+
+</div>
 
 ---
 
 ## O Problema
 
-Leads desqualificados (Bad Fit, Fit Sympla, Faixa F) estavam espalhados em mais de 10 planilhas diferentes de nutrição. Isso gerava:
+O processo de qualificação operava através de **múltiplas planilhas descentralizadas** criadas individualmente para cada lista ou campanha.
 
-- Impossibilidade de mapear rapidamente produtores já qualificados
-- Retrabalho ao processar o mesmo lead múltiplas vezes
-- Perda de oportunidades de requalificação
-- Falta de visão centralizada do histórico de desqualificações
-- Tempo perdido buscando informação em múltiplas fontes
+| Problema | Impacto |
+|---|---|
+| 📂 Múltiplas planilhas sem padronização | Impossibilidade de acompanhamento consolidado |
+| 🔒 Acesso restrito por planilha | Barreiras operacionais entre áreas |
+| ♻️ Sem validação cruzada entre planilhas | Alto risco de qualificar o mesmo lead duas vezes |
+| 📝 Estrutura diferente em cada planilha | Dossiês inconsistentes, difícil de comparar |
 
-**Impacto:** Time gastava 2-3 horas por semana buscando informações de leads já processados e perdia oportunidades de reabordagem.
+**Impacto:** Operação ineficiente, retrabalho constante, falta de visão estratégica.
 
 ---
 
 ## A Solução
 
-Desenvolvi um sistema automatizado em **Google Apps Script** que:
-
-### Extração Multi-fonte
-- Percorre automaticamente todas as planilhas cadastradas na Central de Extração
-- Identifica leads desqualificados por diferentes critérios (GMV Faixa F, Gratuito, Bad Fit, Fit Sympla)
-- Consolida dados em uma base única centralizada
-
-### Anti-duplicidade Inteligente
-- Compara registros pelo nome da empresa
-- Identifica duplicatas e mantém apenas o registro mais recente
-- Utiliza data de nutrição como critério de desempate
-
-### Classificação Automática de Status
-- **Bad Fit:** Permanente (não requalificar)
-- **Fit Sympla:** Elegível após 6 meses
-- **Faixa F:** Critério específico de faturamento
-
-### Cálculo Temporal
-- Calcula automaticamente tempo decorrido desde a desqualificação
-- Define status de requalificação baseado em regras de negócio
-- Atualiza indicadores em tempo real
-
-### Dashboard Centralizado
-- Puxa automaticamente indicadores de resumo de cada planilha
-- Atualiza painel central com métricas consolidadas
-- Permite visão macro de performance por lista
+Desenvolvi um **sistema unificado** que evoluiu progressivamente através de **4 versões** ao longo de 3 dias (12 horas total), implementando **6 automações integradas** — utilizando **Claude AI (Anthropic)** extensivamente para engenharia de prompts, arquitetura de código e otimização de workflows.
 
 ---
 
-## Tecnologias
+## Evolução do Sistema
 
-- **Google Apps Script** - Automação e integração
-- **Google Sheets** - Base de dados e interface
-- **JavaScript** - Lógica de processamento
-- **Algoritmos anti-duplicidade** - Comparação e desempate
-- **Lógica temporal** - Cálculo de elegibilidade
+### Versão 1 — Protótipo: Estrutura Base
+> 4 scripts fundamentais que estabeleceram a base do sistema
+
+- **Timestamp Automático** — registra data/hora ao atribuir responsável
+- **Verificação de Duplicados** — valida nome E email com lógica temporal
+- **Geração de Dossiê** — compila 14 campos em texto estruturado
+- **Verificação em Base Master** — cruza com base externa de leads mapeados
+
+### Versão 2 — Produção: Dossiê Profissional
+> Transformação do dossiê simples em documento estruturado em 4 seções
+
+- Expandiu de **14 → 24 campos** mapeados
+- Adicionou cálculo de valor estimado com margem de segurança de 60%
+- Benchmark completo de concorrência
+- Função `validar()` para tratar campos vazios elegantemente
+
+### Versão 3 — Inteligência e Segurança
+> Camadas de inteligência e validação de contexto
+
+- Dossiê expandido para **7 seções** estruturadas
+- Lógica condicional: constrói frases apenas com campos preenchidos
+- Validação de ambiente: scripts executam apenas na aba correta
+- UX melhorada: verificação silenciosa, sem pop-ups intrusivos
+
+### Versão Final — Sistema Completo com Segmentação Automática
+> Modelo de segmentação automática baseado em regras de negócio
+
+| Flag | Significado | Ação |
+|:---:|---|---|
+| 🔴 Red | Bad-fit definitivo | Descartar |
+| 🟡 Yellow | Contrato ativo / timing específico | Aguardar |
+| 🟢 Green | Sem impeditivos | Contato imediato |
+
+- Trigger unificado consolida timestamp + flags em 1 função
+- `calcularFlag()`: lógica hierárquica de prioridades
+- `atualizarEmLote()`: processa base histórica completa com relatório
+
+---
+
+## Aplicação de IA no Projeto
+
+**Claude AI (Anthropic)** foi utilizado em todas as 4 versões:
+
+> **Prompt usado:** "Preciso criar uma função que valide duplicados por nome OU email, aplicando normalização de texto que remova acentos, sufixos corporativos e mantenha o registro mais antigo. Como estruturar essa lógica em Apps Script?"
+>
+> **→ Resultado:** função `verificarDuplicados()` com normalização NFD e lógica temporal
+
+- Arquitetura de código e validação multicamadas via prompts estruturados
+- Design de triggers inteligentes e lógicos hierárquicos de segmentação
+- Identificação de casos extremos e depuração assistida
+- Code review e sugestões de melhoria
 
 ---
 
 ## Resultados
 
 ### Quantitativos
-- **1000+ leads** unificados automaticamente
-- **10+ planilhas** consolidadas em uma base única
-- **2-3 horas/semana** economizadas
-- **100%** eliminação de retrabalho na busca
+
+| Métrica | Resultado |
+|---|---|
+| Automações integradas | **6** |
+| Campos mapeados | **27** |
+| Seções no dossiê | **7** |
+| Qualificação centralizada | **100%** |
+| Duplicidades em produção | **0** |
+| Versões desenvolvidas | **4 em 3 dias** |
+| Categorias de segmentação | **3 (Red/Yellow/Green)** |
 
 ### Qualitativos
-- Base única de consulta para toda equipe
-- Identificação instantânea de leads elegíveis para requalificação
-- Histórico completo preservado com data e motivo
-- Visão estratégica de leads desqualificados
-- Decisões mais rápidas sobre reabordagem
+
+- ✅ **Centralização total** — uma única fonte de verdade para toda a equipe
+- ✅ **Zero retrabalho** — validação automática elimina qualificação duplicada
+- ✅ **Democratização de acesso** — todos os membros na mesma base
+- ✅ **Padronização absoluta** — qualidade consistente independente do operador
+- ✅ **Segmentação automática** — flags eliminam interpretação subjetiva
+- ✅ **Onboarding simplificado** — novos membros produzem desde o primeiro dia
+
+> Sistema entregue e utilizado diariamente por toda a equipe de qualificação.
 
 ---
 
----
+## Fluxo de Trabalho
 
-## Como Funciona
-
-O sistema opera em 4 etapas automatizadas:
-
-### 1. Extração de Dados
-O script percorre todas as planilhas de nutrição cadastradas na Central de Extração, identificando automaticamente leads com status de desqualificação (Bad Fit, Fit Sympla, Faixa F ou Gratuito). Para cada lead encontrado, extrai informações relevantes: nome da empresa, data de nutrição, motivo da desqualificação e lista de origem.
-
-### 2. Anti-duplicidade
-Com todos os dados extraídos, o sistema compara os registros pelo nome da empresa. Quando encontra duplicatas (mesmo lead em múltiplas planilhas), mantém apenas o registro mais recente utilizando a data de nutrição como critério de desempate. Isso garante que o histórico reflete sempre a última interação com o lead.
-
-### 3. Classificação e Cálculo
-Para cada lead único, o sistema:
-- Classifica o tipo de desqualificação (Bad Fit permanente, Fit Sympla elegível após 6 meses, ou Faixa F)
-- Calcula automaticamente o tempo decorrido desde a desqualificação
-- Define o status atual de requalificação baseado nas regras de negócio
-
-### 4. Consolidação Final
-Todos os dados processados são consolidados na Base Unificada, que serve como fonte única de consulta. O dashboard central é atualizado automaticamente com métricas agregadas de cada lista, permitindo visão estratégica do volume e distribuição de leads desqualificados.
+> **1. Atribuição** → Timestamp automático registra data/hora
+>
+> **2. Preenchimento** → Sistema monitora edições em campos-chave
+>
+> **3. Duplicados** → Cruza nome + email com normalização de texto
+>
+> **4. Base Master** → Verificação silenciosa, sem interromper operação
+>
+> **5. Flags** → Red / Yellow / Green calculado automaticamente
+>
+> **6. Dossiê** → 27 campos compilados em 7 seções estruturadas
+>
+> **7. Lote (opcional)** → Processa base histórica completa com relatório
 
 ---
 
-## Integração com Verificador Automático
+## Arquitetura dos Scripts
 
-Este sistema funciona em conjunto com um **script de verificação** que roda diretamente na **Planilha Master de Nutrição** durante o processo de qualificação.
-
-### Como Funciona a Integração
-
-**Durante a Qualificação:**
-1. Qualificador preenche Nome da Empresa (coluna T) ou E-mail (coluna AD) na planilha master
-2. Script verificador **consulta automaticamente** esta Base Unificada
-3. Retorna instantaneamente na coluna J se o lead já foi mapeado:
-   - Motivo específico de Bad Fit
-   - Fit Sympla com motivo de não atribuição  
-   - Identificação de Faixa F
-
-### Normalização Inteligente
-
-O verificador usa normalização avançada para garantir correspondência:
-- Remove acentos e caracteres especiais
-- Elimina espaços extras
-- Desconsidera sufixos corporativos (LTDA, S.A., ME, Eireli)
-- Busca cruzada por nome E email
-
-### Execução Silenciosa
-
-- Roda automaticamente em background
-- Sem pop-ups ou interrupções
-- Atualização instantânea na planilha
-- Zero impacto na operação
-
-### Impacto Combinado
-
-**Base Unificada** fornece a fonte de verdade centralizada  
-↓  
-**Verificador Automático** consulta em tempo real  
-↓  
-**Resultado:** Identificação instantânea de leads já processados
-
-**Benefício:** Economia de 20-30 minutos por lead que seria requalificado incorretamente, eliminando 100% do retrabalho.
-
----
-
-## Estrutura de Dados
-
-### Campos Extraídos
-- Nome da Empresa
-- Data de Nutrição
-- Motivo de Desqualificação
-- Tipo (Bad Fit / Fit Sympla / Faixa F)
-- Status de Requalificação
-- Tempo Decorrido
-- Lista de Origem
-
-### Regras de Negócio
-- Bad Fit = Permanente (não requalificar)
-- Fit Sympla = 6 meses para requalificação
-- Faixa F = Critério específico
-
----
-
-## Aprendizados
-
-### Técnicos
-- Otimização de loops em Apps Script para processar grandes volumes
-- Normalização de texto para comparação (remoção de acentos, sufixos LTDA/ME)
-- Estruturação de dados para facilitar consultas futuras
-
-### Processo
-- Importância de base única como fonte de verdade
-- Automatização reduz erro humano drasticamente
-- Visão consolidada permite decisões estratégicas mais rápidas
+| Script | Responsabilidade |
+|---|---|
+| `onEdit()` | Trigger unificado — orquestra todas as automações |
+| `verificarDuplicados()` | Validação por nome OU email com normalização NFD |
+| `gerarDossie()` | Compila 27 campos em dossiê estruturado de 7 seções |
+| `verificarBaseMaster()` | Integração cross-sheet com base externa |
+| `calcularFlag()` | Lógica hierárquica Red/Yellow/Green |
+| `atualizarEmLote()` | Processamento em massa com relatório de execução |
 
 ---
 
 ## Limitações & Próximos Passos
 
-### Limitações Atuais
-- Dependente de estrutura padronizada nas planilhas de origem
-- Execução manual (não agendada automaticamente)
+**Limitações atuais:**
+- Estrutura de colunas fixa (mudanças exigem atualização de índices)
+- Duplicados por similaridade fuzzy ainda não capturados
+- Regras de flags hardcoded no código
+- Performance em lote pode cair em bases acima de 1.000 registros
 
-### Melhorias Futuras
-- Trigger automático diário/semanal
-- Alertas quando leads ficam elegíveis para requalificação
-- Integração direta com HubSpot para enriquecimento
+**Próximos passos:**
+- [ ] Mapeamento dinâmico de colunas
+- [ ] Fuzzy matching na validação de duplicados
+- [ ] Regras de flags externalizadas para configuração
+- [ ] Integração com APIs de LLMs para enriquecimento automático
+- [ ] Scoring preditivo de leads com ML
+- [ ] Dashboard de métricas em tempo real
+
+---
+
+## Aprendizados
+
+> **Prompt Engineering** — prompts bem formulados aceleram significativamente o desenvolvimento de lógica complexa
+>
+> **Triggers Unificados** — centralizar automações melhora manutenibilidade e performance
+>
+> **Normalização de Texto** — remoção agressiva de acentos e sufixos aumenta taxa de match
+>
+> **Desenvolvimento Incremental** — versões progressivas permitem validação contínua com feedback real
 
 ---
 
 ## Autor
 
-**Maria Luiza Moraes**  
-Estagiária • Estratégia, Gestão e M&A @ Sympla
+**Maria Luiza Moraes** Estagiária • Estratégia, Gestão e M&A @ Sympla
 
-[LinkedIn](https://www.linkedin.com/in/maria-luiza-moraes-98a6b22a8/) • [GitHub](https://github.com/marialuizasm21)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maria-luiza-moraes-98a6b22a8/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/marialuizasm21)
 
 ---
 
-**Nota:** Este projeto faz parte do portfólio de automações e melhorias de processos desenvolvidas na área de Inteligência de Mercado. O código não está disponível publicamente por conter lógica de negócio proprietária.
-
-
+> **Nota:** O código completo não está disponível publicamente por conter lógica de negócio proprietária. Este repositório serve como documentação do projeto para fins de portfólio.
